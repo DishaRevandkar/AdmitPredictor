@@ -1,0 +1,496 @@
+<!--HTML file to design and style the front end.-->
+<!--author: Meenu Gigi, mg2578@rit.edu-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>University predictor</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <style>
+      html, body {
+        min-height: 100%;
+        background-color: #4b5557;
+      }
+      body, div, form, input, select, textarea, label {
+          padding: 0;
+          margin: 0;
+          outline: none;
+          font-family: Roboto, Arial, sans-serif;
+          font-size: 14px;
+          color: #4b5557;
+          line-height: 22px;
+      }
+
+      h1 {
+          position: absolute;
+          margin:0;
+          font-size: 60px;
+          color: #fff;
+          z-index: 2;
+          line-height: 83px;
+          top:30px;
+      }
+      legend {
+          padding: 10px;
+          font-family: Roboto, Arial, sans-serif;
+          font-size: 18px;
+          color: #fff;
+          background-color: #95adbe;
+          border-radius: 20px 50px;
+      }
+      textarea {
+          width: calc(100% - 12px);
+          padding: 5px;
+      }
+      .testbox {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: inherit;
+          padding: 20px;
+      }
+      form {
+          width: 100%;
+          padding: 20px;
+          border-radius: 6px;
+          background-color: white;
+          box-shadow: 0 0 8px white;
+      }
+      .banner {
+          position: relative;
+          height: 150px;
+          background-color: #990033;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+      }
+      .banner::after {
+          content: "";
+          background-color: #4b574d;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+      }
+      input, select, textarea {
+          margin-bottom: 10px;
+          border: 1px solid #ccc;
+          border-radius: 3px;
+      }
+      input {
+          width: calc(100% - 10px);
+          padding: 5px;
+      }
+      input[type="date"] {
+        padding: 4px 5px;
+      }
+
+      .item input:hover, .item select:hover, .item textarea:hover {
+          border: 1px solid transparent;
+          box-shadow: 0 0 3px 0  #006622;
+          color: #red;
+      }
+      .item {
+<!--        justify-content: space-around;-->
+<!--          position: relative;-->
+<!--          margin: 10px 0;-->
+           display: flex;
+          justify-content: space-between;
+          max-width: 300px;
+          margin: 0 auto;
+          padding: 10px 0;
+      }
+      .item span {
+        color: red;
+      }
+
+
+
+.row {
+  display: flex;
+}
+      input[type=radio], input[type=checkbox]  {
+        display: none;
+      }
+      label.radio {
+          position: relative;
+          display: inline-block;
+          margin: 5px 20px 15px 0;
+          cursor: pointer;
+      }
+      .question span {
+        margin-left: 30px;
+      }
+      .question-answer label {
+        display: block;
+      }
+      label.radio:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          width: 17px;
+          height: 17px;
+          border-radius: 50%;
+          border: 2px solid #ccc;
+      }
+      input[type=radio]:checked + label:before, label.radio:hover:before {
+        border: 2px solid  #006622;
+      }
+      label.radio:after {
+          content: "";
+          position: absolute;
+          top: 6px;
+          left: 5px;
+          width: 8px;
+          height: 4px;
+          border: 3px solid  #006622;
+          border-top: none;
+          border-right: none;
+          transform: rotate(-45deg);
+          opacity: 0;
+      }
+      input[type=radio]:checked + label:after {
+        opacity: 1;
+      }
+      .flax {
+          display:flex;
+          justify-content:space-around;
+      }
+      .btn-block {
+          margin-top: 10px;
+          text-align: center;
+      }
+      button {
+          width: 150px;
+          padding: 10px;
+          border: none;
+          border-radius: 5px;
+          background:  #1c87c9;
+          font-size: 16px;
+          color: #fff;
+          cursor: pointer;
+      }
+      button:hover {
+        background:  #0692e8;
+      }
+
+
+      .float-child {
+            width: 50%;
+            float: left;
+            padding: 20px;
+
+        }
+
+        .float-container {
+            padding: 20px;
+        }
+      @media (min-width: 568px) {
+          .name-item, .city-item {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+      }
+      .name-item input, .name-item div {
+        width: calc(50% - 20px);
+      }
+      .name-item div input {
+      width:97%;}
+      .name-item div label {
+          display:block;
+          padding-bottom:5px;
+      }
+
+
+      section {
+
+          width: 99%;
+          text-align: center;
+          padding:10px;
+            background-color: white;
+        }
+
+        .row{
+          width: 96%;
+          padding: 10px;
+          }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="testbox">
+    <form>
+      <div class="banner">
+        <h1>University Admit Predictor</h1>
+      </div>
+      <br/>
+      <fieldset>
+        <legend>University Admit Predictor</legend>
+        <div class="colums">
+<!--          <div class="item">-->
+<!--            <label for="major">Major<span>*</span></label>-->
+<!--            <input id="major" type="text" name="major" />-->
+<!--          </div>-->
+        <section>
+            <h3 style="text-align: left">Program Information:</h3>
+            <div class="row">
+
+                  <div class="item" style="text-align: center">
+                    <label>Major:</label>
+                    <select class="selectpicker form-control" id="major" name="major" style="width:300px" required="1"><br />
+                      {% for m in major %}
+                        <option value="{{ m }}">{{ m }}</option><br />
+                      {% endfor %}
+                    </select><br />
+                  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+              <div class="item" style="text-align: center">
+                <label>Specialization:</label>
+                <select class="selectpicker form-control" id="specialization" name="specialization" style="width:300px" required="1"><br />
+                  {% for s in specialization %}
+                    <option value="{{ s }}">{{ s }}</option><br />
+                  {% endfor %}
+                </select><br />
+              </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+               <div class="item" style="text-align: center">
+                <label>Program:</label>
+                <select class="selectpicker form-control" id="program" name="program" style="width:300px" required="1"><br />
+                  {% for p in program %}
+                    <option value="{{ p }}">{{ p }}</option><br />
+                  {% endfor %}
+                </select><br />
+              </div>
+              </div>
+
+            <div class="row">
+               <div class="item" style="text-align: center">
+                <label>Department:</label>
+                <select class="selectpicker form-control" id="department" name="department" style="width:300px" required="1"><br />
+                  {% for d in department %}
+                    <option value="{{ d }}">{{ d }}</option><br />
+                  {% endfor %}
+                </select><br />
+              </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+              <div class="item" style="text-align: center">
+                <label>Term and Year:</label>
+                <select class="selectpicker form-control" id="tey" name="tey" style="width:300px" required="1"><br />
+                  {% for t in termAndYear %}
+                    <option value="{{ t }}">{{ t }}</option><br />
+                  {% endfor %}
+                </select><br />
+              </div>
+
+              <div class="item" style="text-align: center; width:300px">
+                <label>Target University:</label>
+                <select class="selectpicker form-control" id="university" name="university" required="1"><br />
+                  {% for u in univName %}
+                    <option value="{{ u }}">{{ u }}</option><br />
+                  {% endfor %}
+                </select><br />
+              </div>
+            </div>
+        </section>
+
+
+
+       <section>
+           <h3 style="text-align: left">Scores:</h3>
+            <div class="row">
+
+                  <div class="item">
+                    <label for="grev">GRE Verbal Score(Out of 170)</label>
+                    <input id="grev" type="number"   name="grev" />
+                  </div>
+
+                  <div class="item">
+                    <label for="greq">GRE Quant Score(Out of 170)</label>
+                    <input id="greq" type="number"   name="greq" />
+                  </div>
+
+                  <div class="item">
+                    <label for="grea">GRE AWA Score</label>
+                    <input id="grea" type="number"   name="grea" />
+                  </div>
+                </div>
+            <div class="row">
+
+                  <div class="item">
+                    <label for="toefl">TOEFL Score</label>
+                    <input id="toefl" type="number"   name="toefl" />
+                  </div>
+
+                 <div class="item">
+                <label for="cgpa">CGPA</label>
+                <input id="cgpa" type="number"   name="cgpa" />
+              </div>
+
+
+              <div class="item" style="text-align: center; width:300px">
+                <label>CGPA Scale:</label>
+                <select class="selectpicker form-control" id="cgpascale" name="cgpascale" style="width:300px" required="1"><br />
+                  {% for c in cgpaScale %}
+                    <option value="{{ c }}">{{ c }}</option><br />
+                  {% endfor %}
+                </select><br />
+              </div>
+            </div>
+       </section>
+
+
+<!--          <div class="item">-->
+<!--            <label for="department">Department</label>-->
+<!--            <input id="department" type="text"   name="department" />-->
+<!--          </div>-->
+    <section>
+           <h3 style="text-align: left">Experience:</h3>
+            <div class="row">
+
+                <div class="item">
+                    <label for="researchexp"> Years of Research Experience<span>*</span></label>
+                    <input id="researchexp" type="number" name="researchexp" />
+                  </div>
+                  <div class="item">
+                    <label for="indexp">Years of Industry Experience<span>*</span></label>
+                    <input id="indexp" type="number"   name="indexp" />
+                  </div>
+
+
+                  <div class="item">
+                    <label for="internExp">Intern Experience</label>
+                    <input id="internExp" type="number"   name="internExp" />
+                  </div>
+            </div>
+    </section>
+
+     <section>
+           <h3 style="text-align: left">Publications:</h3>
+            <div class="row">
+
+                  <div class="item">
+                    <label for="journals">No. of Journals Published</label>
+                    <input id="journals" type="number"   name="journals" />
+                  </div>
+
+
+                  <div class="item">
+                    <label for="conpub">No. of Conference publications</label>
+                    <input id="conpub" type="text"   name="conpub" />
+                  </div>
+                </div>
+            </section>
+
+        </div>
+
+      </fieldset>
+
+<!--      <div class="btn-block">-->
+<!--        <button type="order" href="/">Predict college</button>-->
+<!--      </div>-->
+
+
+      <div class="col-nd-12 form-group" style="text-align:center">
+        <br/><button class="btn btn-primary form-control" style="background-color: #4b574d;" onclick="send_data()">Predict Chances</button>
+      </div>
+
+
+                  <br>
+            <div class="col-nd-12" style="text-align: center">
+              <h3><span id="prediction"></span> </h3>
+            </div>
+
+      <br/>
+      <fieldset>
+      <legend>Submit data for training purposes</legend>
+
+         <section>
+
+                <div class="row">
+                      <div class = "float-container">
+                      <div class="float-child" style="text-align: center; width:300px">
+                        <label>Admit 1:</label>
+                        <select class="selectpicker form-control" id="admituniv_1" name="admituniv_1" required="1"><br />
+                          {% for u in univName %}
+                            <option value="{{ u }}">{{ u }}</option>
+                          {% endfor %}
+                        </select><br />
+                      </div>
+
+
+                      <div class="float-child" style="text-align: center; width:300px">
+                        <label>Admit 2:</label>
+                        <select class="selectpicker form-control" id="admituniv_2" name="admituniv_2" required="1"><br />
+                          {% for u in univName %}
+                            <option value="{{ u }}">{{ u }}</option><br />
+                          {% endfor %}
+                        </select><br />
+                      </div>
+                      </div>
+                </div>
+         </section>
+            <div class="col-nd-12" style="text-align: center">
+              <h3><span id="upload"></span> </h3>
+            </div>
+
+
+      </fieldset>
+      <div class="btn-block">
+      <button type="order" href="/" style="background-color: #4b574d" onclick="upload_data()">Submit</button>
+      </div>
+    </form>
+    </div>
+
+
+
+    <script>
+      function form_handler(event) {
+        event.preventDefault();
+       }
+      function send_data()
+      {
+        document.querySelector('form').addEventListener("submit",form_handler);
+        var fd = new FormData(document.querySelector('form'));
+        var xhr=new XMLHttpRequest();
+        xhr.open('POST','/predict',true);
+        document.getElementById("prediction").innerHTML = "Predicting....";
+
+        xhr.onreadystatechange = function(){
+          if(xhr.readyState == XMLHttpRequest.DONE){
+            res = (xhr.responseText == "1") ? "YES": "NO";
+            document.getElementById('prediction').innerHTML= "Chances: "+res;
+          }
+       };
+       xhr.onload = function(){};
+       xhr.send(fd);
+       }
+
+
+
+       function upload_data()
+      {
+        document.querySelector('form').addEventListener("submit",form_handler);
+        var fd = new FormData(document.querySelector('form'));
+        var xhr=new XMLHttpRequest();
+        xhr.open('POST','/upload',true);
+        document.getElementById("upload").innerHTML = "Uploading data to Database....";
+
+        xhr.onreadystatechange = function(){
+          if(xhr.readyState == XMLHttpRequest.DONE){
+            res = (xhr.responseText == "1") ? "YES": "NO";
+            document.getElementById('upload').innerHTML= "Data submitted successfully!"
+          }
+       };
+       xhr.onload = function(){};
+       xhr.send(fd);
+       }
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+  </body>
+</html>
