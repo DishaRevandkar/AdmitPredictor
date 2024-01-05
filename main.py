@@ -1,9 +1,6 @@
 """DBSI_UniversityRecommendationSystem.ipynb
 Establishes connection with simpleDB database.
 Trained model predicts chances and submits data to database.
-author: Ashwath Sreedhar, ah7387@rit.edu
-author: Meenu Gigi, mg2578@rit.edu
-author: Pradeep Gontla,pg3328@rit.edu
 """
 
 from _csv import reader
