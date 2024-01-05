@@ -7,7 +7,6 @@ Original file is located at
 
 Converts data into Pandas dataframe. Cleans, pre-process and encode the data as required by the model.
 Handles nulls and dirty values. Trains models and determines model accuracy.
-author: Meenu Gigi, mg2578@rit.edu
 """
 
 # Commented out IPython magic to ensure Python compatibility.
